@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FabPosition
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -33,7 +34,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainScaffold() {
+fun AppScreen() {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
@@ -46,8 +47,19 @@ fun MainScaffold() {
                     Text(
                         text = "Top app bar")
                 })
-        }
+        },
 
+        bottomBar = {
+
+        },
+
+        floatingActionButton = {
+
+        },
+
+        floatingActionButtonPosition = FabPosition.End,
+
+        snackbarHost = {}
 
     ) { innerPadding ->
         Column(
@@ -56,7 +68,7 @@ fun MainScaffold() {
             verticalArrangement = Arrangement.spacedBy(6.dp),
         ) {
             Text(
-                modifier = Modifier.padding(8.dp),
+                modifier = Modifier.padding(20.dp),
                 text = "Hello Everyone!"
             )
 
@@ -69,6 +81,6 @@ fun MainScaffold() {
 @Composable
 fun ScaffoldView() {
     ScaffoldTheme {
-        MainScaffold()
+        AppScreen()
     }
 }
